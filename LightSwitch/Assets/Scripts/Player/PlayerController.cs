@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
     public Sprite spriteSwitchWhite;
     public Sprite spriteSwitchDark;
     Vector2 bodyMouvement;
-    
-    private bool spriteIsDark = false;
+    int jumpCount = 0;
+    public bool spriteIsDark = false;
+    float moveInput = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         Mouvement();
         ChangeSprite();
+        SpriteDirection();
     }
 
     void Mouvement()
@@ -34,18 +36,51 @@ public class PlayerController : MonoBehaviour
         transform.Translate(horizontalMouvement,verticalMouvement,0);    
         */
         
-
-        rb.velocity  = new Vector2 (Input.GetAxisRaw("Horizontal") * walkSpeed , rb.velocity.y );
+        moveInput = Input.GetAxisRaw("Horizontal");
+        rb.velocity  = new Vector2 (moveInput * walkSpeed , rb.velocity.y );
         //rb.velocity = bodyMouvement * walkSpeed ;
        
        if(Input.GetButtonDown("Jump"))
        {
-        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-       }
-        
-    
-    
+        if(jumpCount < 2 )
+        {
+            if(jumpCount == 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+               
+            }
+            else
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+                
+            }
+            jumpCount++;
+        }
+       }         
     }
+
+    void SpriteDirection()
+    {
+        if(moveInput > 0)
+        {
+            spriteRenderer.flipX =false;
+        }
+        else if(moveInput < 0)
+        {
+            spriteRenderer.flipX =true;
+        }
+    }
+
+    void  OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Wall")
+        {
+            Debug.Log("Player is Grounded");
+            jumpCount = 0;
+        }
+    }
+
+
 
     void ChangeSprite()
     {

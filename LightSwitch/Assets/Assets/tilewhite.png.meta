@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b567086b5f4957348a51a03cf4de12ee
+guid: 7c2a4a0a1957eec4da9f5b97435121a8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,8 +67,8 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
-    resizeAlgorithm: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CharacterDark_0
+      name: tilewhite_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 24
-        height: 19
+        y: 7
+        width: 32
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e97b5003202b6c447980990a014b7fb0
-      internalID: -895860521
+      spriteID: 4e874b54dfd8a684e8e1f058fe6d4fe3
+      internalID: -1483205648
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CharacterDark_0: -895860521
+      tilewhite_0: -1483205648
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

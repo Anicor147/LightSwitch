@@ -12,26 +12,21 @@ public class BackgroundColor : MonoBehaviour
     
     void Start()
     {
-        //ChangeToWhite();
+  //      ChangeToWhite();
     }
     
     void Update()
     {
         ChangeBackground();
     }
-    /*
-    void ChangeToWhite()
+    
+/* void ChangeToWhite()
     {
        cameraBackground.backgroundColor = colorWhite;
-       Invoke("ChangeToDark" , invokeTimer);
+       
     }
+*/
 
-    void ChangeToDark()
-    {
-        cameraBackground.backgroundColor = colorDark;
-        Invoke("ChangeToWhite" , invokeTimer);
-    }
-    */
 
         void ChangeBackground()
     {

@@ -7,6 +7,8 @@ TagManager:
   - WhiteScanner
   - Ground
   - Wall
+  - Void
+  - DarkScanner
   layers:
   - Default
   - TransparentFX

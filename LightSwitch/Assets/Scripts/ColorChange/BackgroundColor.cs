@@ -6,7 +6,7 @@ public class BackgroundColor : MonoBehaviour
 {
    public Color colorWhite = Color.white;
    public Color colorDark = Color.black;
-    bool backIsDark = false;
+    bool backIsDark = true;
     public Camera cameraBackground;
     [SerializeField] float invokeTimer;
     

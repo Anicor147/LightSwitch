@@ -6,32 +6,27 @@ public class BackgroundColor : MonoBehaviour
 {
    public Color colorWhite = Color.white;
    public Color colorDark = Color.black;
-    bool backIsDark = false;
+    bool backIsDark = true;
     public Camera cameraBackground;
     [SerializeField] float invokeTimer;
     
     void Start()
     {
-        //ChangeToWhite();
+  //      ChangeToWhite();
     }
     
     void Update()
     {
         ChangeBackground();
     }
-    /*
-    void ChangeToWhite()
+    
+/* void ChangeToWhite()
     {
        cameraBackground.backgroundColor = colorWhite;
-       Invoke("ChangeToDark" , invokeTimer);
+       
     }
+*/
 
-    void ChangeToDark()
-    {
-        cameraBackground.backgroundColor = colorDark;
-        Invoke("ChangeToWhite" , invokeTimer);
-    }
-    */
 
         void ChangeBackground()
     {

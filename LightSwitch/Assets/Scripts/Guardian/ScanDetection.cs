@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ScanDetection : MonoBehaviour
 {
     public GameObject WhiteScanner;
@@ -21,12 +21,14 @@ public class ScanDetection : MonoBehaviour
     {
         if (colorDetection.spriteIsDark == true && other.gameObject.tag == "WhiteScanner")
         {
-            Debug.Log("Your Dark when scanner is white you Died");
+            
+             SceneManager.LoadScene("Level1");
         }
-      /*  else if (colorDetection.spriteIsDark == false && DarkScanner)
+       else if (colorDetection.spriteIsDark == false && other.gameObject.tag == "DarkScanner")
         {
-            Debug.Log("Your white when scanner is Dark you Died");
+            
+             SceneManager.LoadScene("Level1");
         }
-*/
+
     }
 }

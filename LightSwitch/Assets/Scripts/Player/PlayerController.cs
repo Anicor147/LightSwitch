@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,18 +43,18 @@ public class PlayerController : MonoBehaviour
        
        if(Input.GetButtonDown("Jump"))
        {
-        if(jumpCount < 2 )
+        if(jumpCount < 1 )
         {
             if(jumpCount == 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
                
-            }
+            }/*
             else
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
                 
-            }
+            }*/
             jumpCount++;
         }
        }         
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         if(moveInput > 0)
         {
-            spriteRenderer.flipX =false;
+            spriteRenderer.flipX = false;
         }
         else if(moveInput < 0)
         {
@@ -73,13 +74,21 @@ public class PlayerController : MonoBehaviour
 
     void  OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Ground" )
         {
-            Debug.Log("Player is Grounded");
             jumpCount = 0;
         }
     }
 
+    void OnTriggerEnter2D(Collider2D trigger)
+    {
+          if (trigger.gameObject.tag == "Void")
+          {
+            
+            SceneManager.LoadScene("Level1");
+          }
+        
+    }
 
 
     void ChangeSprite()

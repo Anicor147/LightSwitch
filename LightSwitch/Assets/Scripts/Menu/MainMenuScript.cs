@@ -17,10 +17,14 @@ public void ExitButton()
 public void StartGame()
 {
 SceneManager.LoadScene("Level1");
+Time.timeScale = 1f;
 
 }
 
-
+public void MainMenu()
+{
+    SceneManager.LoadScene("MainMenu");
+}
 
 
 }

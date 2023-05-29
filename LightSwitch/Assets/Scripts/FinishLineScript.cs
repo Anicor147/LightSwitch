@@ -11,7 +11,7 @@ public class FinishLineScript : MonoBehaviour
     if(other.tag == "Player")
     {
         Debug.Log("finish");
-        Invoke("EndScreen", 4f);
+        Invoke("EndScreen", 2f);
         
     }
   }
